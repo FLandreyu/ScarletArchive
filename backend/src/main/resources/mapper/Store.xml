@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.scarlet.mapper.Store">
+ <sql id="filters"><where>
+  <choose><when test="admin">1=1 <if test="status != null and status != ''">AND a.status=#{status}</if></when><otherwise>a.status='PUBLISHED'</otherwise></choose>
+  <if test="q != null and q != ''">AND (LOWER(a.title) LIKE CONCAT('%',LOWER(#{q}),'%') OR LOWER(a.excerpt) LIKE CONCAT('%',LOWER(#{q}),'%') OR LOWER(a.body) LIKE CONCAT('%',LOWER(#{q}),'%'))</if>
+  <if test="category != null and category != ''">AND c.slug=#{category}</if>
+  <if test="tag != null and tag != ''">AND EXISTS(SELECT 1 FROM article_tag atg JOIN tag t ON atg.tag_id=t.id WHERE atg.article_id=a.id AND t.slug=#{tag})</if>
+  <if test="featured != null">AND a.featured=#{featured}</if>
+ </where></sql>
+ <select id="articles" resultType="cn.scarlet.domain.Models$Article">
+  SELECT a.id,a.title,a.slug,a.excerpt,a.cover,a.category_id,a.status,a.featured,a.version,a.published_at,a.created_at,a.updated_at,c.name category_name,c.slug category_slug FROM article a JOIN category c ON a.category_id=c.id
+  <include refid="filters"/>
+  ORDER BY <choose><when test="sort == 'oldest'">a.published_at ASC,a.id ASC</when><otherwise>a.published_at DESC,a.id DESC</otherwise></choose> LIMIT #{size} OFFSET #{offset}
+ </select>
+ <select id="articleCount" resultType="long">SELECT COUNT(*) FROM article a JOIN category c ON a.category_id=c.id <include refid="filters"/></select>
+</mapper>

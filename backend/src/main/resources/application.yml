@@ -1,0 +1,35 @@
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8098}
+  forward-headers-strategy: native
+spring:
+  application:
+    name: scarlet-archive
+  datasource:
+    url: jdbc:h2:file:./data/scarlet;MODE=MySQL;DATABASE_TO_LOWER=TRUE;DB_CLOSE_ON_EXIT=FALSE;LOCK_TIMEOUT=10000
+    username: sa
+    password: ""
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 6MB
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+scarlet:
+  seed: ${DEMO_DATA:true}
+  admin-password: ${ADMIN_PASSWORD:Scarlet123!}
+  jwt-secret: ${JWT_SECRET:}
+  public-url: ${PUBLIC_URL:http://127.0.0.1:8098}
+  uploads: ${UPLOAD_DIR:./data/uploads}
+logging:
+  level:
+    root: INFO

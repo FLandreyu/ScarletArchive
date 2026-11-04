@@ -1,0 +1,10 @@
+**/node_modules
+**/target
+**/data
+**/test-results
+**/playwright-report
+backend/src/main/resources/static
+runtime
+.git
+.env
+*.log

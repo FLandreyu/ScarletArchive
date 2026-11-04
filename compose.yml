@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: scarlet_archive
+      MYSQL_USER: scarlet
+      MYSQL_PASSWORD: ${DB_PASSWORD:?Set DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD}
+    volumes: ["mysql-data:/var/lib/mysql"]
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 25
+  app:
+    build:
+      context: .
+      dockerfile: deploy/backend.Dockerfile
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      SERVER_ADDRESS: 0.0.0.0
+      DB_URL: jdbc:mysql://db:3306/scarlet_archive?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      DB_USERNAME: scarlet
+      DB_PASSWORD: ${DB_PASSWORD}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET:?Set a random Base64 JWT_SECRET}
+      PUBLIC_URL: ${PUBLIC_URL:-http://localhost:8098}
+      DEMO_DATA: ${DEMO_DATA:-false}
+    volumes: ["app-data:/app/data"]
+    depends_on:
+      db:
+        condition: service_healthy
+  web:
+    build:
+      context: .
+      dockerfile: deploy/frontend.Dockerfile
+    ports: ["127.0.0.1:8098:80"]
+    depends_on: [app]
+volumes:
+  mysql-data:
+  app-data:

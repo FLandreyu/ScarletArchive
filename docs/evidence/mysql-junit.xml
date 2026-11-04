@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="cn.scarlet.BlogIntegrationTest" time="5.952" tests="42" errors="0" skipped="0" failures="0" flakes="0">
+  <testcase name="honeypotRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.583">
+    </testcase>
+  <testcase name="editIncrementsVersion" classname="cn.scarlet.BlogIntegrationTest" time="0.052" />
+  <testcase name="draftHiddenFromSearch" classname="cn.scarlet.BlogIntegrationTest" time="0.069" />
+  <testcase name="actualJwtAndLogoutRevocationWork" classname="cn.scarlet.BlogIntegrationTest" time="0.177" />
+  <testcase name="loginRateLimitWorks" classname="cn.scarlet.BlogIntegrationTest" time="0.458" />
+  <testcase name="invalidCategoryRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.012" />
+  <testcase name="invalidPageRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.037" />
+  <testcase name="linkCredentialsRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="newMessageIsPending" classname="cn.scarlet.BlogIntegrationTest" time="0.01" />
+  <testcase name="usedCategoryCannotBeDeleted" classname="cn.scarlet.BlogIntegrationTest" time="0.125" />
+  <testcase name="friendApplicationIsNotPublic" classname="cn.scarlet.BlogIntegrationTest" time="0.01" />
+  <testcase name="svgIsRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.016" />
+  <testcase name="deleteRemovesTagsAndArticle" classname="cn.scarlet.BlogIntegrationTest" time="0.03" />
+  <testcase name="publishedSitemapContainsArticle" classname="cn.scarlet.BlogIntegrationTest" time="0.045" />
+  <testcase name="draftHiddenFromSitemap" classname="cn.scarlet.BlogIntegrationTest" time="0.028" />
+  <testcase name="parallelEditsOnlyOneWins" classname="cn.scarlet.BlogIntegrationTest" time="0.034" />
+  <testcase name="externalHttpsImageAccepted" classname="cn.scarlet.BlogIntegrationTest" time="0.002" />
+  <testcase name="approveMessageMakesItPublic" classname="cn.scarlet.BlogIntegrationTest" time="0.01" />
+  <testcase name="realPngReencoded" classname="cn.scarlet.BlogIntegrationTest" time="0.124" />
+  <testcase name="passwordHashNeverInMe" classname="cn.scarlet.BlogIntegrationTest" time="0.01" />
+  <testcase name="unpublishRemovesPublicAccess" classname="cn.scarlet.BlogIntegrationTest" time="0.037" />
+  <testcase name="siteSettingsPersist" classname="cn.scarlet.BlogIntegrationTest" time="0.017" />
+  <testcase name="wrongPasswordRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.063" />
+  <testcase name="friendJavascriptRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.002" />
+  <testcase name="adminRequiresAuthentication" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="invalidSortRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.005" />
+  <testcase name="draftHiddenFromArchive" classname="cn.scarlet.BlogIntegrationTest" time="0.034" />
+  <testcase name="staleEditorRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.029" />
+  <testcase name="invalidTagRollsBackArticle" classname="cn.scarlet.BlogIntegrationTest" time="0.012" />
+  <testcase name="anonymousCannotUpload" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="fakePngIsRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.005" />
+  <testcase name="scriptImageUrlRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="taxonomyCreationWorks" classname="cn.scarlet.BlogIntegrationTest" time="0.007" />
+  <testcase name="publishMakesArticleReadable" classname="cn.scarlet.BlogIntegrationTest" time="0.016" />
+  <testcase name="messageValidationWorks" classname="cn.scarlet.BlogIntegrationTest" time="0.014" />
+  <testcase name="invalidUploadPathRejected" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="unknownFrontRouteLoadsThemedPage" classname="cn.scarlet.BlogIntegrationTest" time="0.012" />
+  <testcase name="pageSizeBounded" classname="cn.scarlet.BlogIntegrationTest" time="0.005" />
+  <testcase name="draftHiddenFromDetail" classname="cn.scarlet.BlogIntegrationTest" time="0.015" />
+  <testcase name="healthIsPublic" classname="cn.scarlet.BlogIntegrationTest" time="0.003" />
+  <testcase name="guestRateLimitWorks" classname="cn.scarlet.BlogIntegrationTest" time="0.02" />
+  <testcase name="sqlInjectionCannotBroadenResults" classname="cn.scarlet.BlogIntegrationTest" time="0.004" />
+</testsuite>

@@ -1,0 +1,453 @@
+{
+  "config": {
+    "argv": [
+      "D:/node.exe",
+      "frontend/node_modules/@playwright/test/cli.js",
+      "test"
+    ],
+    "configFile": "frontend/playwright.config.ts",
+    "rootDir": "frontend/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "frontend/tests",
+        "testIgnore": [
+          "/mobile/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 50000
+      },
+      {
+        "outputDir": "frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "/mobile/"
+        ],
+        "timeout": 50000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "desktop",
+        "testDir": "frontend/tests",
+        "snapshotDir": "frontend/tests",
+        "testIgnore": {},
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 50000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8099",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 1050
+          },
+          "permissions": [
+            "clipboard-read",
+            "clipboard-write"
+          ],
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "desktop"
+      },
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "mobile",
+        "testDir": "frontend/tests",
+        "snapshotDir": "frontend/tests",
+        "testIgnore": [],
+        "testMatch": {},
+        "timeout": 50000,
+        "use": {
+          "baseURL": "http://127.0.0.1:8099",
+          "headless": true,
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "permissions": [
+            "clipboard-read",
+            "clipboard-write"
+          ],
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "isMobile": true,
+          "hasTouch": true
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "mobile"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../docs/evidence/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "flows.spec.ts",
+      "file": "flows.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "首页、搜索、代码复制与阅读目录",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3013,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:34.970Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-703034de248ba9f53e5a",
+          "file": "flows.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "后台草稿隔离、预览安全、发布后前台可读",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1517,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:38.588Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-da8b34000ec6f9b3eab1",
+          "file": "flows.spec.ts",
+          "line": 43,
+          "column": 1
+        },
+        {
+          "title": "留言先审核再公开，友链申请也受审核约束",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1367,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:40.116Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-7024ee2b8517ef7e789f",
+          "file": "flows.spec.ts",
+          "line": 76,
+          "column": 1
+        },
+        {
+          "title": "后台标签管理与站点设置真实持久化",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1212,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:41.493Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-156017caae779210dec9",
+          "file": "flows.spec.ts",
+          "line": 110,
+          "column": 1
+        },
+        {
+          "title": "封面上传解码重编码后可从真实资源地址读取",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 826,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:42.714Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-ff26c3fb4ea8e11c4108",
+          "file": "flows.spec.ts",
+          "line": 139,
+          "column": 1
+        },
+        {
+          "title": "公开页面、图片查看、隐藏房间与404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:43.549Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-cb73dc8efd156ab07911",
+          "file": "flows.spec.ts",
+          "line": 153,
+          "column": 1
+        },
+        {
+          "title": "退出后服务端拒绝原令牌",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "desktop",
+              "projectName": "desktop",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 439,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:45.382Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "86d6a544053f1eb9f224-4b4fda0da0fa0b1ddc39",
+          "file": "flows.spec.ts",
+          "line": 176,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "mobile.spec.ts",
+      "file": "mobile.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "手机导航、文章、庭院与减少动态偏好",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 50000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "mobile",
+              "projectName": "mobile",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1303,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-03T13:05:46.415Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "e79c838550b25e92508e-af53ff5407a8a121ce5f",
+          "file": "mobile.spec.ts",
+          "line": 2,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-03T13:05:34.522Z",
+    "duration": 13632.779,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
