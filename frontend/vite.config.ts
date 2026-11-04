@@ -1,8 +1,18 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
+import { existsSync } from 'node:fs'
+import manifest from './character-art.json'
 export default defineConfig({
   plugins: [vue(), tailwindcss()],
+  define: {
+    __SCARLET_CHARACTER_ART__: JSON.stringify(
+      process.env.SCARLET_CHARACTER_ART !== 'off' &&
+        Object.keys(manifest.characters).every((key) =>
+          existsSync(new URL(`public/art/characters/${key}.png`, import.meta.url)),
+        ),
+    ),
+  },
   build: { outDir: '../backend/src/main/resources/static', emptyOutDir: true },
   server: {
     host: '127.0.0.1',

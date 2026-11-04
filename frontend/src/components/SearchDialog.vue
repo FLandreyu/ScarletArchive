@@ -4,6 +4,7 @@ import { Search, ArrowUpRight } from 'lucide-vue-next'
 import { api } from '../api'
 import type { Article, Page } from '../types'
 import Modal from './Modal.vue'
+import CharacterPortrait from './CharacterPortrait.vue'
 const emit = defineEmits<{ close: [] }>()
 const query = ref(''),
   items = ref<Article[]>([]),
@@ -41,7 +42,14 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <Modal title="小恶魔 · 藏书检索" wide @close="emit('close')"
-    ><div class="search-box">
+    ><div class="search-welcome">
+      <CharacterPortrait character="koakuma" variant="search" />
+      <div>
+        <span class="eyebrow">A LITTLE HELP FROM KOAKUMA</span>
+        <p>「想找哪一页？我来帮你翻翻。」</p>
+      </div>
+    </div>
+    <div class="search-box">
       <Search :size="20" /><input
         v-model="query"
         aria-label="搜索藏书"
@@ -67,3 +75,36 @@ onBeforeUnmount(() => {
     </div></Modal
   >
 </template>
+
+<style scoped>
+.search-welcome {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin: -6px 0 14px;
+}
+.search-welcome .eyebrow {
+  font-size: 7px;
+  letter-spacing: 1.7px;
+  color: #b091b8;
+}
+.search-welcome p {
+  font-family: var(--serif);
+  font-size: 16px;
+  color: #ddc9df;
+  margin-top: 12px;
+  line-height: 1.9;
+}
+@media (max-width: 700px) {
+  .search-welcome {
+    gap: 10px;
+  }
+  .search-welcome p {
+    font-size: 13px;
+  }
+  .search-welcome .eyebrow {
+    font-size: 6px;
+    letter-spacing: 1px;
+  }
+}
+</style>

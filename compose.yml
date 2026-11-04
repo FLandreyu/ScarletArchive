@@ -34,6 +34,8 @@ services:
     build:
       context: .
       dockerfile: deploy/frontend.Dockerfile
+      args:
+        SCARLET_CHARACTER_ART: ${SCARLET_CHARACTER_ART:-on}
     ports: ["127.0.0.1:8098:80"]
     depends_on: [app]
 volumes:

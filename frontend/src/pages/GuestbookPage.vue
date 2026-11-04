@@ -50,6 +50,7 @@ onMounted(load)
       title="庭院来信"
       description="风从庭院经过，也许会捎来你的问候。"
       symbol="❧"
+      character="meiling"
     />
     <div class="guestbook-layout">
       <section class="guest-form-panel">

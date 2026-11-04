@@ -31,6 +31,7 @@ const inMonth = (month: string) => items.value.filter((a) => a.publishedAt?.star
       title="时间回廊"
       description="有些时光会远去，有些文字会替我们记得。"
       symbol="◷"
+      character="sakuya"
     />
     <div class="archive-note">
       <Clock3 :size="27" :stroke-width="1" />

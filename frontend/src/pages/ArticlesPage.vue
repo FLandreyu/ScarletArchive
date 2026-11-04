@@ -54,6 +54,7 @@ watch(() => route.query, load, { immediate: true })
       title="魔法图书馆"
       description="每一篇手记，都是书架上等待被翻开的一页。"
       symbol="☾"
+      character="patchouli"
     />
     <div class="library-tools">
       <form class="inline-search" @submit.prevent="filter({ q: query || undefined })">

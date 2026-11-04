@@ -49,6 +49,10 @@ try {
     const n = window.performance.getEntriesByType('navigation')[0]
     return { domContentLoadedMs: Math.round(n.domContentLoadedEventEnd), ...window.__scarletMetrics }
   })
+  await page.getByRole('button', { name: '打开藏书搜索' }).click()
+  await page.locator('.portrait-search img').evaluate((img) => img.decode())
+  await page.screenshot({ path: fileURLToPath(new URL('13-search.png', output)), animations: 'disabled' })
+  await page.keyboard.press('Escape')
   await visit('/articles', '.article-grid .article-card')
   await capture(page, '02-library.png')
   await visit('/articles/transactions-and-a-seat', '.reading-toc a')
@@ -95,11 +99,24 @@ try {
   await mp.locator('.copy-code').first().waitFor()
   await capture(mp, '08-mobile-reading.png')
   assert.ok(await mp.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+  for (const [path, name] of [
+    ['/articles', '14-mobile-library.png'],
+    ['/guestbook', '15-mobile-garden.png'],
+    ['/secret', '16-mobile-secret.png'],
+  ]) {
+    await mp.goto(base + path)
+    await mp.locator('.character-portrait img').evaluate((img) => img.decode())
+    await capture(mp, name)
+    assert.ok(await mp.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+  }
   const tablet = await browser.newContext({ viewport: { width: 820, height: 1180 }, reducedMotion: 'reduce' })
   const tp = await tablet.newPage()
   await tp.goto(base + '/articles')
   await tp.locator('.article-grid .article-card').first().waitFor()
   assert.ok(await tp.evaluate(() => document.documentElement.scrollWidth <= innerWidth))
+  await tp.goto(base)
+  await tp.locator('.portrait-hero img').evaluate((img) => img.decode())
+  await capture(tp, '17-tablet-home.png')
   assert.deepEqual(errors, [])
   const report = {
     checkedAt: new Date().toISOString(),
@@ -111,7 +128,7 @@ try {
     nestedCodeBlocks: false,
     scriptErrors: errors,
     localBrowserPerformance: performance,
-    screenshots: 12,
+    screenshots: 17,
   }
   await writeFile(new URL('final-smoke.json', evidence), JSON.stringify(report, null, 2) + '\n')
   console.log(JSON.stringify(report))

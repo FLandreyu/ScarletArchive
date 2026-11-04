@@ -17,6 +17,8 @@ import { api, date } from '../api'
 import type { Article, Page } from '../types'
 import { useSite } from '../store'
 import ArticleCard from '../components/ArticleCard.vue'
+import CharacterPortrait from '../components/CharacterPortrait.vue'
+import { characterArtEnabled } from '../character-art'
 const site = useSite(),
   total = ref(0),
   posts = ref<Article[]>([]),
@@ -75,7 +77,7 @@ watch(() => site.motion, animate)
 onBeforeUnmount(() => context?.revert())
 </script>
 <template>
-  <section ref="hero" class="home-hero">
+  <section ref="hero" class="home-hero" :class="{ 'has-host': characterArtEnabled }">
     <img
       class="hero-image"
       src="/art/mansion-moonlight.png"
@@ -106,6 +108,7 @@ onBeforeUnmount(() => context?.revert())
           </p>
         </div>
       </div>
+      <CharacterPortrait character="remilia" variant="hero" />
       <div class="hero-coordinate">
         <span>45° · MOONLIGHT / 00:00</span><span>SCARLET DEVIL MANSION</span>
       </div>
@@ -251,3 +254,44 @@ onBeforeUnmount(() => context?.revert())
     </div>
   </section>
 </template>
+
+<style scoped>
+@media (min-width: 701px) and (max-width: 1100px) {
+  .has-host .hero-copy {
+    max-width: calc(100% - 260px);
+  }
+  .has-host .hero-copy h1 {
+    font-size: 45px;
+    letter-spacing: 2px;
+  }
+}
+@media (max-width: 700px) {
+  .home-hero.has-host {
+    height: 945px;
+    min-height: 945px;
+  }
+  .has-host .hero-inner {
+    padding-top: 56px;
+    align-items: flex-start;
+  }
+  .has-host .host-note {
+    margin-top: 24px;
+  }
+  .has-host .hero-jp {
+    margin-top: 20px;
+  }
+  .has-host .hero-copy h1 {
+    font-size: 39px;
+    line-height: 1.5;
+  }
+  .has-host .hero-description {
+    margin-top: 18px;
+  }
+  .has-host .hero-actions {
+    margin-top: 22px;
+  }
+  .has-host .hero-coordinate {
+    display: none;
+  }
+}
+</style>

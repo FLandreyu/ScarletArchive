@@ -15,6 +15,7 @@ const site = useSite(),
       :title="tags ? '标签星图' : '藏书分区'"
       :description="tags ? '一点灵感，也可能通往一整片星空。' : '循着自己的好奇，找到想停留的书架。'"
       symbol="✦"
+      :character="tags ? 'koakuma' : 'patchouli'"
     />
     <div v-if="tags" class="tag-constellation">
       <RouterLink

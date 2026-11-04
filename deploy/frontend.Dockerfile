@@ -3,6 +3,8 @@ WORKDIR /build
 COPY frontend/package*.json ./frontend/
 RUN cd frontend && npm ci
 COPY frontend/ ./frontend/
+ARG SCARLET_CHARACTER_ART=on
+ENV SCARLET_CHARACTER_ART=${SCARLET_CHARACTER_ART}
 RUN cd frontend && npm run build
 FROM nginx:alpine
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf

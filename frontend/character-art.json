@@ -1,0 +1,69 @@
+{
+  "author": "dairi / はるか",
+  "authorId": "4920496",
+  "authorUrl": "https://www.pixiv.net/users/4920496",
+  "checkedAt": "2026-11-04",
+  "termsSha256": "62610c37f46af5791d81d19ddf7ae0565996954382b872d438494a094c33858a",
+  "characters": {
+    "remilia": {
+      "name": "蕾米莉亚",
+      "title": "レミリア立ち絵修正 表情差分",
+      "id": "71407907",
+      "source": "https://www.pixiv.net/artworks/71407907",
+      "original": "https://i.pximg.net/img-original/img/2018/10/29/22/29/21/71407907_p0.png",
+      "width": 745,
+      "height": 1070,
+      "sha256": "c2335755effd0722d9ead25b34367bcdab59d984edd30168148332df4fd9ae31"
+    },
+    "flandre": {
+      "name": "芙兰朵露",
+      "title": "フラン立ち絵その2 表情差分",
+      "id": "40346048",
+      "source": "https://www.pixiv.net/artworks/40346048",
+      "original": "https://i.pximg.net/img-original/img/2013/12/18/16/44/03/40346048_p0.png",
+      "width": 654,
+      "height": 1070,
+      "sha256": "211b87dec6c1398a182517e5a77cae188121f13e807a0dd0b6ecf3483ad68c55"
+    },
+    "patchouli": {
+      "name": "帕秋莉",
+      "title": "パチュリー立ち絵修正版 表情差分",
+      "id": "67199755",
+      "source": "https://www.pixiv.net/artworks/67199755",
+      "original": "https://i.pximg.net/img-original/img/2018/02/10/17/51/15/67199755_p0.png",
+      "width": 765,
+      "height": 1140,
+      "sha256": "3aed834f708378e0257214802174e3e9e069f957085ae67c5cf1a5656ecb4930"
+    },
+    "sakuya": {
+      "name": "十六夜咲夜",
+      "title": "咲夜さん立ち絵 表情差分",
+      "id": "39547480",
+      "source": "https://www.pixiv.net/artworks/39547480",
+      "original": "https://i.pximg.net/img-original/img/2013/11/04/19/17/55/39547480_p0.png",
+      "width": 576,
+      "height": 1200,
+      "sha256": "c07d7c5528a2db9bfa30c94b3d9512b776e7e6d58bcb8dedfc7a5b96d3c368d4"
+    },
+    "meiling": {
+      "name": "红美铃",
+      "title": "美鈴立ち絵描き直し 表情差分",
+      "id": "55217436",
+      "source": "https://www.pixiv.net/artworks/55217436",
+      "original": "https://i.pximg.net/img-original/img/2016/02/11/18/06/14/55217436_p0.png",
+      "width": 706,
+      "height": 1270,
+      "sha256": "ec70eb05f162d7533f95905363f3eb8a2bc69572210bf5caa8384bd960ea8978"
+    },
+    "koakuma": {
+      "name": "小恶魔",
+      "title": "小悪魔立ち絵 表情差分",
+      "id": "33672888",
+      "source": "https://www.pixiv.net/artworks/33672888",
+      "original": "https://i.pximg.net/img-original/img/2013/02/18/19/10/57/33672888_p0.png",
+      "width": 511,
+      "height": 950,
+      "sha256": "001c54a19ce96012d44e97deb865c4ee2af0ef06c12903a18e206e4d8f918d46"
+    }
+  }
+}

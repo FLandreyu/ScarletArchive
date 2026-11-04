@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-11-03T13:06:47.872Z",
+  "checkedAt": "2026-11-04T00:59:57.448Z",
   "baseURL": "http://127.0.0.1:8098",
   "desktopWidth": 1440,
   "tabletWidth": 820,
@@ -8,9 +8,9 @@
   "nestedCodeBlocks": false,
   "scriptErrors": [],
   "localBrowserPerformance": {
-    "domContentLoadedMs": 111,
-    "lcp": 392,
+    "domContentLoadedMs": 132,
+    "lcp": 428,
     "cls": 0
   },
-  "screenshots": 12
+  "screenshots": 17
 }
